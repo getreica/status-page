@@ -22,11 +22,6 @@ on:
   repository_dispatch:
     types: [setup]
   workflow_dispatch:
-
-permissions:
-  actions: write
-  contents: write
-
 jobs:
   release:
     name: Setup Upptime
@@ -57,7 +52,6 @@ jobs:
         env:
           GH_PAT: ${{ secrets.GH_PAT || github.token }}
       - name: Generate graphs
-        continue-on-error: true
         uses: benc-uk/workflow-dispatch@v1
         with:
           workflow: Graphs CI
@@ -72,8 +66,7 @@ jobs:
         name: GitHub Pages Deploy
         with:
           github_token: ${{ secrets.GH_PAT || github.token }}
-          publish_branch: gh-pages
           publish_dir: "site/status-page/__sapper__/export/"
-          force_orphan: "true"
+          force_orphan: "false"
           user_name: "Upptime Bot"
           user_email: "73812536+upptime-bot@users.noreply.github.com"
