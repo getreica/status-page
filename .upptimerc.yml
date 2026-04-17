@@ -30,14 +30,24 @@ sites:
 
 status-website:
   cname: status.getreica.com
-  theme: dark
+  themeUrl: /reica-theme.css
+  customHeadHtml: >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   logoUrl: https://getreica.com/logo.png
-  name: Reica Status
-  introTitle: Reica system status
-  introMessage: Live status and uptime history for Reica's infrastructure.
+  logoHref: https://getreica.com
+  hideNavLogo: true
+  name: reica
+  introTitle: Infrastructure status **built for brands.**
+  introMessage: Live availability, response times, and incident history for Reica's core services.
   favicon: https://getreica.com/favicon.ico
   navbar:
     - title: Status
       href: /
+    - title: Website
+      href: https://getreica.com
+      target: _blank
     - title: GitHub
       href: https://github.com/getreica/status-page
+      target: _blank
