@@ -21,6 +21,8 @@ on:
   repository_dispatch:
     types: [summary]
   workflow_dispatch:
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 jobs:
   release:
     name: Generate README
