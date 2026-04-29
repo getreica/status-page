@@ -21,8 +21,6 @@ on:
   repository_dispatch:
     types: [update_template]
   workflow_dispatch:
-env:
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 jobs:
   release:
     name: Build
