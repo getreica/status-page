@@ -26,7 +26,6 @@ Defined in `.upptimerc.yml` under `sites:`. URLs are stored as **GitHub Secrets*
 | Reica Website | `$WEBSITE_URL` | Simple HTTP check |
 | Product Service | `$PRODUCT_API_URL` | Requires `X-Health-Token` header |
 | API Service | `$API_URL` | Requires `X-Health-Token` header |
-| Relevance Score | `$RUNPOD_API_URL` | Accepts 200 or 401 as "up" |
 | Database | `$SUPABASE_URL` | Accepts 200, 401, 404 as "up" |
 
 ## Adding a new service
@@ -37,10 +36,13 @@ Defined in `.upptimerc.yml` under `sites:`. URLs are stored as **GitHub Secrets*
 
 ## Theme / branding
 
-Custom CSS lives inline in `.upptimerc.yml` under `status-website.css`. Brand tokens:
-- Primary orange: `#c4622d`
-- Background: `#f6f1ea`
-- Font: Manrope (loaded via Google Fonts in `customHeadHtml`)
+Custom CSS lives inline in `.upptimerc.yml` under `status-website.css` (a copy in `assets/reica-theme.css`). Since 2026-11-05 it follows Reica's light table design (`reica-twopointzero/DESIGN.md`, design kit in `reica-website-twopointzero/_docs/reica-design-kit.md`):
+- Paper `#FFFFFF`, hairline `#E4E4E4`, grey text `#767676`, ink `#171717`; selection blue `#1E5BD7` for links and the accent word of the title only
+- States as a small square plus a word: up `#15803D`, degraded `#B45309`, down `#B91C1C`
+- Font: Instrument Sans (Google Fonts in `customHeadHtml`); cards with a hairline and 6px radius, no shadows, no gradients, no blur
+- Dark mode under `prefers-color-scheme: dark`; logo and favicon are the dot-catalog mark served by docs.getreica.com
+
+The Relevance Score monitor was removed on 2026-11-05 (the service was retired on 2026-10-27); its old history files stay, as they are generated.
 
 Do **not** inline external CSS or fonts outside of `customHeadHtml` / `css` fields.
 
