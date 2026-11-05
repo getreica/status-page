@@ -122,6 +122,12 @@ article.graph {
   background-position: center right 1.25rem;
 }
 
+/* Upptime draws the graphs in colour; on the light table they read in grey. */
+article.graph {
+  background-color: #ffffff;
+  background-blend-mode: luminosity;
+}
+
 /* States: a small square swatch plus a word, never colour alone. */
 .tag {
   display: inline-flex;
@@ -193,7 +199,7 @@ footer { color: #767676; border-top: 1px solid #e4e4e4; font-size: 0.875rem; }
     --error-button-border-color: #3a3a3a;
     --graph-filter: grayscale(1) invert(0.85);
   }
-  html, body, article { background: #161616; color: #ededed; }
+  html, body, article { background-color: #161616; color: #ededed; }
   nav, footer { border-color: #2f2f2f; }
   article { border-color: #2f2f2f; }
   nav .logo, nav a:hover, [aria-current] { color: #ededed; }
